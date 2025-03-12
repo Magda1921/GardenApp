@@ -1,95 +1,156 @@
-$navbar-bg: #333;
+$navbar-bg: transparent;
 $navbar-text-color: white;
-$hover-bg: red;
+$hover-bg: transparent;
+$yellow-hover: #e6a835;
 $dropdown-bg: #f9f9f9;
 $column-bg: #ccc;
+$background-image: url("/src/resources/garden1.jpg");
 
-.navbar {
-  overflow: hidden;
-  background-color: $navbar-bg;
-  font-family: Arial;
+.main {
+  background: $background-image no-repeat center/cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
 
-  a {
+  .main_navbar {
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: $navbar-bg;
+    font-family: Arial;
+
+    a {
+      float: left;
+      font-size: 16px;
+      color: $navbar-text-color;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+
+      &:hover {
+        background-color: $hover-bg;
+        color: $yellow-hover;
+      }
+    }
+  }
+
+  .dropdown {
     float: left;
-    font-size: 16px;
-    color: $navbar-text-color;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+    overflow: hidden;
 
-    &:hover {
-      background-color: $hover-bg;
-    }
-  }
-}
-
-.dropdown {
-  float: left;
-  overflow: hidden;
-
-  .dropbtn {
-    font-size: 16px;
-    border: none;
-    outline: none;
-    color: $navbar-text-color;
-    padding: 14px 16px;
-    background-color: inherit;
-    font: inherit;
-    margin: 0;
-  }
-
-  &:hover {
     .dropbtn {
-      background-color: $hover-bg;
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: $navbar-text-color;
+      padding: 14px 16px;
+      background-color: inherit;
+      font: inherit;
+      margin: 0;
     }
-
-    .dropdown-content {
-      display: block;
-    }
-  }
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: $dropdown-bg;
-  width: 100%;
-  left: 0;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-
-  .header {
-    background: $hover-bg;
-    padding: 16px;
-    color: $navbar-text-color;
-  }
-}
-
-.column {
-  float: left;
-  width: 33.33%;
-  padding: 10px;
-  background-color: $column-bg;
-  height: 250px;
-
-  a {
-    float: none;
-    color: black;
-    padding: 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
 
     &:hover {
-      background-color: #ddd;
+      .dropbtn {
+        background-color: $hover-bg;
+      }
+
+      .dropdown-content {
+        display: block;
+      }
+    }
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: $dropdown-bg;
+    width: 100%;
+    left: 0;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+
+    .header {
+      background: $hover-bg;
+      padding: 16px;
+      color: $navbar-text-color;
+    }
+  }
+
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    background-color: $column-bg;
+    height: 250px;
+
+    a {
+      float: none;
+      color: black;
+      padding: 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+
+      &:hover {
+        background-color: #ddd;
+      }
+    }
+  }
+
+  .row {
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+  &_title {
+    color: #ffffff;
+  }
+  &__buttons {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+
+    &--green {
+      background-color: #204e51;
+      color: white;
+
+      &:hover {
+        background-color: #ffbe40;
+        color: black;
+      }
+    }
+
+    &--yellow {
+      background-color: #ffbe40;
+      color: black;
+
+      &:hover {
+        background-color: #204e51;
+        color: white;
+      }
     }
   }
 }
-
-.row {
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+.section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  display: flex;
 }

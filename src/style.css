@@ -1,9 +1,21 @@
-.navbar {
+.main {
+  background: url("/src/resources/garden1.jpg") no-repeat center/cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+.main .main_navbar {
   overflow: hidden;
-  background-color: #333;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: transparent;
   font-family: Arial;
 }
-.navbar a {
+.main .main_navbar a {
   float: left;
   font-size: 16px;
   color: white;
@@ -11,15 +23,15 @@
   padding: 14px 16px;
   text-decoration: none;
 }
-.navbar a:hover {
-  background-color: red;
+.main .main_navbar a:hover {
+  background-color: transparent;
+  color: #e6a835;
 }
-
-.dropdown {
+.main .dropdown {
   float: left;
   overflow: hidden;
 }
-.dropdown .dropbtn {
+.main .dropdown .dropbtn {
   font-size: 16px;
   border: none;
   outline: none;
@@ -29,14 +41,13 @@
   font: inherit;
   margin: 0;
 }
-.dropdown:hover .dropbtn {
-  background-color: red;
+.main .dropdown:hover .dropbtn {
+  background-color: transparent;
 }
-.dropdown:hover .dropdown-content {
+.main .dropdown:hover .dropdown-content {
   display: block;
 }
-
-.dropdown-content {
+.main .dropdown-content {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -45,20 +56,19 @@
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
-.dropdown-content .header {
-  background: red;
+.main .dropdown-content .header {
+  background: transparent;
   padding: 16px;
   color: white;
 }
-
-.column {
+.main .column {
   float: left;
   width: 33.33%;
   padding: 10px;
   background-color: #ccc;
   height: 250px;
 }
-.column a {
+.main .column a {
   float: none;
   color: black;
   padding: 16px;
@@ -66,12 +76,52 @@
   display: block;
   text-align: left;
 }
-.column a:hover {
+.main .column a:hover {
   background-color: #ddd;
 }
-
-.row:after {
+.main .row:after {
   content: "";
   display: table;
   clear: both;
+}
+.main_title {
+  color: #ffffff;
+}
+.main__buttons {
+  display: flex;
+  gap: 20px;
+}
+.main__button {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+}
+.main__button--green {
+  background-color: #204e51;
+  color: white;
+}
+.main__button--green:hover {
+  background-color: #ffbe40;
+  color: black;
+}
+.main__button--yellow {
+  background-color: #ffbe40;
+  color: black;
+}
+.main__button--yellow:hover {
+  background-color: #204e51;
+  color: white;
+}
+
+.section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  display: flex;
 }/*# sourceMappingURL=style.css.map */
