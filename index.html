@@ -2,12 +2,136 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <link rel="stylesheet" href="src/style.css" />
+    <title>Garden App</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <div class="main">
+      <div class="main_navbar">
+        <a href="#demos">DEMOS</a>
+        <a href="#pages">PAGES</a>
+        <div class="dropdown">
+          <button class="dropbtn">
+            SERVICES
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content"></div>
+        </div>
+
+        <div class="dropdown">
+          <button class="dropbtn">
+            CASE STUDIES
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content"></div>
+        </div>
+
+        <div class="dropdown">
+          <button class="dropbtn">
+            BLOG
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content"></div>
+        </div>
+
+        <a href="#contactUs">CONTACT US</a>
+      </div>
+      <div class="main_content">
+        <h1 class="main_title">Landscaping & Gardening</h1>
+        <div class="main_buttons">
+          <a href="#" class="main__button main__button--green">Get In Touch</a>
+          <a href="#" class="main__button main__button--yellow">Who We Are</a>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <h2>
+        We Are the Name of the Game When It Comes to Taking Care of Plants
+      </h2>
+      <p>
+        Landscape is a full-service grounds care company. Our established
+        systems allow us to deliver industry-leading lawn care and landscape
+        solutions to commercial and residential clients. Built on a family
+        tradition of caring, we are driven by a passion to exceed customer
+        expectations.
+      </p>
+      <a href="#" class="main__button main__button--green"
+        >Download Our Brochure</a
+      >
+    </div>
+    <div class="gallery">
+      <img
+        src="/src/resources/flowers.jpg"
+        onclick="openLightbox(0)"
+        alt="Flowers"
+        class="gallery__image"
+      />
+      <img
+        src="/src/resources/garden1.jpg"
+        onclick="openLightbox(1)"
+        alt="Garden"
+        class="gallery__image"
+      />
+      <img
+        src="/src/resources/plant.jpg"
+        onclick="openLightbox(2)"
+        alt="Plant"
+        class="gallery__image"
+      />
+      <img
+        src="/src/resources/smallPlant.jpg"
+        onclick="openLightbox(3)"
+        alt="Small plant"
+        class="gallery__image"
+      />
+      <img
+        src="/src/resources/vegetable.jpg"
+        onclick="openLightbox(4)"
+        alt="Vegetable"
+        class="gallery__image"
+      />
+      <img
+        src="/src/resources/water.jpg"
+        onclick="openLightbox(5)"
+        alt="Water"
+        class="gallery__image"
+      />
+    </div>
+    <div class="lightbox" id="lightbox">
+      <span class="lightbox__close" onclick="closeLightbox()">&times;</span>
+      <button class="lightbox__prev" onclick="changeImage(-1)">&#10094;</button>
+      <img class="lightbox__content" id="lightboxImage">
+      <button class="lightbox__next" onclick="changeImage(1)">&#10095;</button>
+  </div>
+   
+    </div>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll(".gallery__image");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+        currentIndex = index;
+        lightboxImage.src = images[currentIndex].src;
+        lightbox.classList.add("active");
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove("active");
+    }
+
+    function changeImage(direction) {
+        currentIndex = (currentIndex + direction + images.length) % images.length;
+        lightboxImage.src = images[currentIndex].src;
+    }
+
+    window.openLightbox = openLightbox;
+    window.closeLightbox = closeLightbox;
+    window.changeImage = changeImage;
+});
+    </script>
   </body>
 </html>

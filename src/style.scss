@@ -1,0 +1,239 @@
+$navbar-bg: transparent;
+$navbar-text-color: white;
+$hover-bg: transparent;
+$yellow-hover: #e6a835;
+$dropdown-bg: #f9f9f9;
+$column-bg: #ccc;
+$background-image: url("/src/resources/garden1.jpg");
+
+.main {
+  background: $background-image no-repeat center/cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+
+  .main_navbar {
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: $navbar-bg;
+    font-family: Arial;
+
+    a {
+      float: left;
+      font-size: 16px;
+      color: $navbar-text-color;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+
+      &:hover {
+        background-color: $hover-bg;
+        color: $yellow-hover;
+      }
+    }
+  }
+
+  .dropdown {
+    float: left;
+    overflow: hidden;
+
+    .dropbtn {
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: $navbar-text-color;
+      padding: 14px 16px;
+      background-color: inherit;
+      font: inherit;
+      margin: 0;
+    }
+
+    &:hover {
+      .dropbtn {
+        background-color: $hover-bg;
+      }
+
+      .dropdown-content {
+        display: block;
+      }
+    }
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: $dropdown-bg;
+    width: 100%;
+    left: 0;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+
+    .header {
+      background: $hover-bg;
+      padding: 16px;
+      color: $navbar-text-color;
+    }
+  }
+
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    background-color: $column-bg;
+    height: 250px;
+
+    a {
+      float: none;
+      color: black;
+      padding: 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+
+      &:hover {
+        background-color: #ddd;
+      }
+    }
+  }
+
+  .row {
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+  &_title {
+    color: #ffffff;
+  }
+  &__buttons {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+
+    &--green {
+      background-color: #204e51;
+      color: white;
+
+      &:hover {
+        background-color: #ffbe40;
+        color: black;
+      }
+    }
+
+    &--yellow {
+      background-color: #ffbe40;
+      color: black;
+
+      &:hover {
+        background-color: #204e51;
+        color: white;
+      }
+    }
+  }
+}
+.section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  display: flex;
+}
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4vw;
+
+  &__image {
+    width: 100%;
+    height: 130vw;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.lightbox {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__content {
+    max-width: 90%;
+    max-height: 90%;
+    display: block;
+  }
+
+  &__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+
+  &__prev,
+  &__next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    color: black;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.8);
+    }
+  }
+
+  &__prev {
+    left: 20px;
+  }
+
+  &__next {
+    right: 20px;
+  }
+}
