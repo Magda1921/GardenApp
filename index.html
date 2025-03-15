@@ -3,49 +3,64 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Basic garden app">
+    <meta name="keywords" content="garden, flower, plant">
     <link rel="stylesheet" href="src/style.css" />
     <title>Garden App</title>
   </head>
   <body>
-    <div class="main">
-      <div class="main_navbar">
-        <a href="#demos">DEMOS</a>
-        <a href="#pages">PAGES</a>
-        <div class="dropdown">
-          <button class="dropbtn">
-            SERVICES
-            <i class="fa fa-caret-down"></i>
-          </button>
-          <div class="dropdown-content"></div>
-        </div>
 
-        <div class="dropdown">
-          <button class="dropbtn">
-            CASE STUDIES
-            <i class="fa fa-caret-down"></i>
-          </button>
-          <div class="dropdown-content"></div>
-        </div>
+      <nav class="nav" >
+        <ul>
+          <li class="nav__item"><a class="nav__link">demos</a>
+            <ul class="nav-submenu">
+              <li class="nav-submenu__item"><a class="nav-submenu__link" href="#home1">home 1</a></li>
+              <li class="nav-submenu__item"><a class="nav-submenu__link" href="#home2">home 2</a></li>
+          </ul>
+        </li>
+          <li class="nav__item"><a class="nav__link">pages</a>
+            <ul class="nav-submenu">
+            <li class="nav-submenu__item"><a class="nav-submenu__link" href="#home1">home 1</a></li>
+            <li class="nav-submenu__item"><a class="nav-submenu__link" href="#home2">home 2</a></li>
+            <li class="nav-submenu__item"><a class="nav-submenu__link" href="#caseStudies1">case studies 1</a></li>
+            <li class="nav-submenu__item"><a class="nav-submenu__link" href="#caseStudies2">case studies 2</a></li>
+            <li class="nav-submenu__item"><a class="nav-submenu__link" href="#caseStudies3">case studies 3</a></li>
+            <li class="nav-submenu__item"><a class="nav-submenu__link" href="#blog1">blog 1</a></li>
+            <li class="nav-submenu__item"><a class="nav-submenu__link" href="#blog2">blog 2</a></li>
+            <li class="nav-submenu__item"><a class="nav-submenu__link" href="#blog3">blog 3</a></li>
+          </ul>
+          </li>
+          <li class="nav__item"><a class="nav__link" href="#services"> services</a>
+           </li>
+            
+          <li class="nav__item"><a class="nav__link">case studies</a>
+            <ul class="nav-submenu">
+              <li class="nav-submenu__item"><a class="nav-submenu__link" href="#caseStudies1">case studies 1</a></li>
+              <li class="nav-submenu__item"><a class="nav-submenu__link" href="#caseStudies2">case studies 2</a></li>
+              <li class="nav-submenu__item"><a class="nav-submenu__link" href="#caseStudies3">case studies 3</a></li>
+          </ul></li>
 
-        <div class="dropdown">
-          <button class="dropbtn">
-            BLOG
-            <i class="fa fa-caret-down"></i>
-          </button>
-          <div class="dropdown-content"></div>
-        </div>
+          <li class="nav__item"><a class="nav__link">blog</a>
+            <ul class="nav-submenu">
+              <li class="nav-submenu__item"><a class="nav-submenu__link" href="#blog1">blog 1</a></li>
+              <li class="nav-submenu__item"><a class="nav-submenu__link" href="#blog2">blog 2</a></li>
+              <li class="nav-submenu__item"><a class="nav-submenu__link" href="#blog3">blog 3</a></li>
+          </ul></li>
+      
+          <li class="nav__item"><a class="nav__link" href="#contactUs">contact us</a></li>
+        </ul>
 
-        <a href="#contactUs">CONTACT US</a>
-      </div>
-      <div class="main_content">
-        <h1 class="main_title">Landscaping & Gardening</h1>
-        <div class="main_buttons">
-          <a href="#" class="main__button main__button--green">Get In Touch</a>
-          <a href="#" class="main__button main__button--yellow">Who We Are</a>
+      </nav>
+      <div class="firstSection">
+      <div class="firstSection_content">
+        <h1 class="firstSection_title">Landscaping & Gardening</h1>
+        <div class="firstSection_buttons">
+          <a href="#" class="firstSection__button firstSection__button--green">Get In Touch</a>
+          <a href="#" class="firstSection__button firstSection__button--yellow">Who We Are</a>
         </div>
       </div>
     </div>
-    <div class="section">
+    <div class="secondSection">
       <h2>
         We Are the Name of the Game When It Comes to Taking Care of Plants
       </h2>
@@ -56,7 +71,7 @@
         tradition of caring, we are driven by a passion to exceed customer
         expectations.
       </p>
-      <a href="#" class="main__button main__button--green"
+      <a href="#" class="firstSection__button firstSection__button--green"
         >Download Our Brochure</a
       >
     </div>
@@ -106,6 +121,7 @@
   </div>
    
     </div>
+ 
   <script>
 document.addEventListener("DOMContentLoaded", function () {
     const images = document.querySelectorAll(".gallery__image");

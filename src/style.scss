@@ -6,7 +6,68 @@ $dropdown-bg: #f9f9f9;
 $column-bg: #ccc;
 $background-image: url("/src/resources/garden1.jpg");
 
-.main {
+.nav {
+  background-color: $navbar-bg;
+  position: absolute;
+  display: flex;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+
+  &__item {
+    list-style: none;
+    position: relative;
+  }
+
+  &__link {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s;
+
+    &:hover {
+      background: #444;
+    }
+  }
+}
+.nav-submenu {
+  display: none !important;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #444;
+  list-style: none;
+  min-width: 200px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+
+  ul {
+  }
+  .nav-submenu__item {
+    .nav-submenu__link {
+      display: block;
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+      transition: background 0.3s;
+
+      &:hover {
+        background: #555;
+      }
+    }
+  }
+}
+
+.nav__item:focus-within .nav__submenu {
+  display: block;
+}
+.firstSection {
   background: $background-image no-repeat center/cover;
   height: 100vh;
   display: flex;
@@ -14,71 +75,6 @@ $background-image: url("/src/resources/garden1.jpg");
   align-items: center;
   text-align: center;
   padding: 20px;
-
-  .main_navbar {
-    overflow: hidden;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: $navbar-bg;
-    font-family: Arial;
-
-    a {
-      float: left;
-      font-size: 16px;
-      color: $navbar-text-color;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-
-      &:hover {
-        background-color: $hover-bg;
-        color: $yellow-hover;
-      }
-    }
-  }
-
-  .dropdown {
-    float: left;
-    overflow: hidden;
-
-    .dropbtn {
-      font-size: 16px;
-      border: none;
-      outline: none;
-      color: $navbar-text-color;
-      padding: 14px 16px;
-      background-color: inherit;
-      font: inherit;
-      margin: 0;
-    }
-
-    &:hover {
-      .dropbtn {
-        background-color: $hover-bg;
-      }
-
-      .dropdown-content {
-        display: block;
-      }
-    }
-  }
-
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: $dropdown-bg;
-    width: 100%;
-    left: 0;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-
-    .header {
-      background: $hover-bg;
-      padding: 16px;
-      color: $navbar-text-color;
-    }
-  }
 
   .column {
     float: left;
@@ -146,7 +142,7 @@ $background-image: url("/src/resources/garden1.jpg");
     }
   }
 }
-.section {
+.secondSection {
   padding-top: 80px;
   padding-bottom: 80px;
   flex-direction: column;
